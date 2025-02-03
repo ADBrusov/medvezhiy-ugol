@@ -1,0 +1,76 @@
+<section id="reviews" class="py-20 bg-green-50">
+  <div class="container-main">
+    <div class="max-w-2xl mx-auto mb-16 text-center">
+      <h2 class="mb-4 text-4xl font-bold text-green-800">
+        Отзывы наших гостей
+      </h2>
+      <p class="text-lg text-gray-600">
+        Что говорят те, кто уже праздновал с нами
+      </p>
+    </div>
+
+    <div class="reviews-slider swiper">
+      <div class="swiper-wrapper">
+        <each loop="review in reviews">
+          <div class="swiper-slide !h-auto">
+            <div class="relative flex flex-col h-full bg-white rounded-2xl">
+              <img
+                src="{{ review.background }}"
+                alt="Фото мероприятия"
+                class="object-cover w-full h-56 xl:h-72 rounded-t-2xl"
+                loading="lazy"
+              />
+              <div class="flex-1 p-8">
+                <div class="mb-6 text-lg leading-relaxed">
+                  "{{ review.text }}"
+                </div>
+                <div class="flex items-center gap-4">
+                  <img
+                    src="{{ review.avatar }}"
+                    alt="{{ review.author }}"
+                    class="w-12 h-12 border-2 border-white rounded-full"
+                    loading="lazy"
+                  />
+                  <div>
+                    <div class="font-bold">{{ review.author }}</div>
+                    <div class="text-sm opacity-80">{{ review.event }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </each>
+      </div>
+
+      <div class="swiper-pagination !relative !mt-8"></div>
+    </div>
+  </div>
+</section>
+
+<script locals>
+  module.exports = {
+    reviews: [
+      {
+        text: "Это был самый красивый день в нашей жизни! Все прошло идеально, от оформления до меню. Спасибо команде за профессионализм!",
+        author: "Анна и Дмитрий",
+        event: "Свадьба, 2023",
+        avatar: "/images/reviews/avatar-1.webp",
+        background: "/images/reviews/wedding-1.jpg",
+      },
+      {
+        text: "Организация на высшем уровне! Все гости были в восторге от локации и сервиса. Обязательно вернемся сюда снова.",
+        author: "Екатерина",
+        event: "Корпоратив, 2022",
+        avatar: "/images/reviews/avatar-2.avif",
+        background: "/images/reviews/corporate-1.jpeg",
+      },
+      {
+        text: "Спасибо за незабываемый вечер! Все было продумано до мелочей. Особенно хочется отметить работу шеф-повара — блюда были восхитительны!",
+        author: "Игорь",
+        event: "Юбилей, 2023",
+        avatar: "/images/reviews/avatar-3.jpg",
+        background: "/images/reviews/anniversary-1.jpg",
+      },
+    ],
+  };
+</script>

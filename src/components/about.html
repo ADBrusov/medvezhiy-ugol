@@ -1,0 +1,48 @@
+<section id="about" class="py-20 bg-white">
+  <div class="container-main">
+    <div class="mb-16 text-center">
+      <h2 class="text-4xl font-bold text-green-800">
+        База отдыха "Медвежий Угол"
+      </h2>
+      <p class="text-lg text-gray-600">
+        Это уединение от городской суеты, в чаще живописного уголка природы.
+      </p>
+    </div>
+
+    <div class="grid gap-12 md:grid-cols-3">
+      <each loop="achievement in achievements">
+        <div
+          class="p-8 text-center transition-all shadow-lg bg-green-50 rounded-2xl hover:shadow-xl"
+        >
+          <h3 class="mb-4 text-2xl font-semibold text-green-800">
+            {{ achievement.title }}
+          </h3>
+          <div class="w-16 h-1 mx-auto mb-4 bg-green-800"></div>
+          <p class="text-lg text-gray-600">{{ achievement.description }}</p>
+        </div>
+      </each>
+    </div>
+  </div>
+</section>
+
+<script locals>
+  module.exports = {
+    achievements: [
+      {
+        title: "12 лет опыта создания незабываемых событий",
+        description:
+          "Мы с любовью и профессионализмом организуем каждый момент вашего праздника, создавая уникальные события.",
+      },
+      {
+        title: "Более 700 проведенных свадеб",
+        description:
+          "Мы гордимся тем, что сделали свадьбы наших гостей по-настоящему запоминающимися и волшебными.",
+      },
+      {
+        title: "Около 100 000 гостей побывали в нашем незабываемом месте",
+        description:
+          "Тысячи гостей, оставивших самые тёплые воспоминания, выбрали нашу базу для своих торжеств.",
+      },
+    ],
+  };
+</script>

@@ -1,0 +1,97 @@
+<section id="advantages" class="py-12 bg-gray-50 md:py-20">
+  <div class="container-main">
+    <h2
+      class="mb-8 text-3xl font-bold text-center text-green-800 md:mb-16 md:text-4xl"
+    >
+      Почему выбирают нас
+    </h2>
+
+    <ul class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4 sm:gap-8">
+      <each loop="advantage in advantages">
+        <li
+          class="relative p-6 overflow-hidden transition-all duration-300 bg-white shadow-sm rounded-xl hover:shadow-md md:p-8 hover:-translate-y-2 group"
+        >
+          <!-- Градиентный фон при наведении -->
+          <div
+            class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-br from-green-50/30 to-white/50 group-hover:opacity-100"
+          ></div>
+
+          <div class="relative flex flex-col h-full">
+            <icon
+              src="{{advantage.icon}}"
+              class="w-10 h-10 mb-4 text-green-700 transition-transform duration-300 md:w-16 md:h-16 md:mb-6 group-hover:scale-110 group-hover:text-green-800"
+            ></icon>
+
+            <h3 class="mb-3 text-lg font-semibold md:text-xl md:mb-4">
+              {{ advantage.title }}
+              <span
+                class="block w-8 h-1 mt-2 transition-all duration-300 bg-green-600 rounded-full md:w-12 md:mt-3 group-hover:w-16"
+              ></span>
+            </h3>
+
+            <p
+              class="text-sm leading-relaxed text-gray-600 md:text-base group-hover:text-gray-800"
+            >
+              {{ advantage.description }}
+            </p>
+          </div>
+        </li>
+      </each>
+    </ul>
+  </div>
+</section>
+
+<script locals>
+  module.exports = {
+    advantages: [
+      {
+        title: "Авторская кухня",
+        description:
+          "Блюда готовятся на территории из свежих продуктов. Уникальное меню и красивая подача от наших шеф-поваров.",
+        icon: "public/svg/chef-hat.svg", // Иконка повара/кухни
+      },
+      {
+        title: "Организация под ключ",
+        description:
+          "От идеи до реализации: берем на себя все заботы — декор, логистика, развлечения и техническое сопровождение.",
+        icon: "public/svg/checklist.svg", // Иконка чек-листа
+      },
+      {
+        title: "Уединенная территория",
+        description:
+          "Закрытая площадка в лесу для приватности вашего праздника. Никаких посторонних!",
+        icon: "public/svg/trees.svg", // Иконка деревьев/природы
+      },
+      {
+        title: "Живописные зоны регистрации",
+        description:
+          "2 локации у озера и в саду для идеальных фотографий и трогательных моментов.",
+        icon: "public/svg/heart.svg", // Иконка свадебной арки
+      },
+      {
+        title: "Профессиональный декор",
+        description:
+          "Команда декораторов создаст атмосферу вашей мечты: от классики до современных трендов.",
+        icon: "public/svg/paint-brush.svg", // Иконка кисти/декора
+      },
+      {
+        title: "Бесплатная парковка",
+        description:
+          "Просторная охраняемая парковка для всех гостей. Не нужно волноваться за автомобили.",
+        icon: "public/svg/parking.svg", // Иконка парковки
+      },
+      {
+        title: "Музыка 24/7",
+        description:
+          "Звуковое оборудование премиум-класса. Любой жанр, любая громкость — праздник не умолкает!",
+        icon: "public/svg/music-note.svg", // Иконка нот/динамика
+      },
+      {
+        title: "Подарки при бронировании",
+        description:
+          "Свадебный фотосет, аренда арки или букет невесты в подарок при раннем бронировании.",
+        icon: "public/svg/gift.svg", // Иконка подарка
+      },
+    ],
+  };
+</script>

@@ -1,0 +1,155 @@
+<header
+  class="border-b border-green-800"
+  x-data="{ isOpen: false, isModalOpen: false }"
+>
+  <div class="container-main">
+    <div class="flex items-center justify-between py-4">
+      logo
+      <!-- <img src="/logo.svg" alt="Медвежий угол" class="h-10 xl:h-12" /> -->
+
+      <nav class="hidden xl:block">
+        <ul class="flex items-center gap-8">
+          <each loop="section in sections">
+            <li>
+              <a
+                href="{{ section.href }}"
+                class="text-lg transition-colors hover:text-green-800"
+              >
+                {{ section.title }}
+              </a>
+            </li>
+          </each>
+        </ul>
+      </nav>
+
+      <div class="flex items-center gap-4 xl:hidden">
+        <button
+          @click="isOpen = !isOpen"
+          class="p-2 text-green-800"
+          aria-label="Меню"
+        >
+          <svg
+            class="w-8 h-8"
+            :class="{ 'hidden': isOpen }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+
+          <svg
+            class="w-8 h-8"
+            :class="{ 'hidden': !isOpen }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <button @click="isModalOpen = true" class="hidden button-base xl:block">
+        Забронировать дату
+      </button>
+    </div>
+
+    <div
+      x-show="isOpen"
+      class="absolute inset-x-0 z-50 w-full bg-white shadow-lg xl:hidden"
+    >
+      <div class="py-4 container-main">
+        <ul class="flex flex-col gap-4">
+          <each loop="section in sections">
+            <li>
+              <a
+                href="{{ section.href }}"
+                class="block py-3 text-lg hover:text-green-800"
+                @click="isOpen = false"
+              >
+                {{ section.title }}
+              </a>
+            </li>
+          </each>
+
+          <li>
+            <button @click="isModalOpen = true" class="w-full button-base">
+              Забронировать дату
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно для "Забронировать дату" -->
+  <div
+    x-show="isModalOpen"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+    x-cloak
+  >
+    <div
+      class="w-full max-w-md p-8 bg-white rounded-2xl"
+      @click.outside="isModalOpen = false"
+    >
+      <h3 class="mb-4 text-2xl font-bold text-green-800">Забронировать дату</h3>
+
+      <form class="space-y-5">
+        <input
+          type="text"
+          placeholder="Ваше имя"
+          class="w-full p-3 border-b focus:border-green-600"
+        />
+        <input
+          type="tel"
+          placeholder="Телефон"
+          class="w-full p-3 border-b focus:border-green-600"
+        />
+        <input type="date" class="w-full p-3 border-b focus:border-green-600" />
+        <button class="w-full button-base">Отправить</button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<script locals>
+  module.exports = {
+    sections: [
+      {
+        title: "Преимущества",
+        href: "#advantages",
+      },
+      {
+        title: "Шатры",
+        href: "#tents",
+      },
+      {
+        title: "Кухня",
+        href: "#cooking",
+      },
+      {
+        title: "Команда",
+        href: "#team",
+      },
+      {
+        title: "Отзывы",
+        href: "#reviews",
+      },
+      {
+        title: "Контакты",
+        href: "#contacts",
+      },
+    ],
+  };
+</script>

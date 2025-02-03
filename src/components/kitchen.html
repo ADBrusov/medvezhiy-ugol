@@ -1,0 +1,106 @@
+<section id="cooking" class="py-20 bg-green-50" x-data="{ isFormOpen: false }">
+  <div class="container-main">
+    <div class="max-w-3xl mx-auto mb-16 text-center">
+      <h2 class="mb-6 text-4xl font-bold text-green-800">
+        Ресторанное качество на природе
+      </h2>
+      <p class="text-lg text-gray-600">
+        На базе отдыха «Медвежий Угол» работает своя команда профессиональных
+        поваров, которые готовят блюда «из-под ножа», прямо на месте
+      </p>
+    </div>
+
+    <!-- Слайдер -->
+    <div class="mb-20 kitchen-slider swiper">
+      <div class="swiper-wrapper">
+        <each loop="slide in slides">
+          <div class="swiper-slide">
+            <div
+              class="relative mx-2 overflow-hidden rounded-2xl shadow-xl aspect-[4/3] before:absolute before:inset-0 before:bg-black/30"
+            >
+              <img
+                src="{{ slide.image }}"
+                alt="{{ slide.title }}"
+                class="object-cover w-full h-full"
+                loading="lazy"
+              />
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80"
+              >
+                <h3 class="text-xl font-bold text-white">{{ slide.title }}</h3>
+                <p class="text-gray-200">{{ slide.subtitle }}</p>
+              </div>
+            </div>
+          </div>
+        </each>
+      </div>
+
+      <div class="swiper-pagination !relative !mt-8"></div>
+      <div class="swiper-button-next !text-green-600"></div>
+      <div class="swiper-button-prev !text-green-600"></div>
+    </div>
+
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="p-8 bg-white shadow-sm rounded-2xl">
+        <p class="mb-6 text-lg text-gray-600">
+          Мы предлагаем не только вкусную еду, но и красивую подачу, а также
+          высокий уровень обслуживания
+        </p>
+        <button @click="isFormOpen = true" class="mx-auto button-base">
+          Получить меню
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    x-show="isFormOpen"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+    x-cloak
+  >
+    <div
+      class="w-full max-w-md p-8 bg-white rounded-2xl"
+      @click.outside="isFormOpen = false"
+    >
+      <h3 class="mb-4 text-2xl font-bold text-green-800">
+        Идеальное меню для вашего праздника
+      </h3>
+
+      <form class="space-y-5">
+        <input
+          type="text"
+          placeholder="Ваше имя"
+          class="w-full p-3 border-b focus:border-green-600"
+        />
+        <input
+          type="tel"
+          placeholder="Телефон"
+          class="w-full p-3 border-b focus:border-green-600"
+        />
+        <button class="w-full button-base">Отправить</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script locals>
+  module.exports = {
+    slides: [
+      {
+        image: "/images/kitchen/01.avif",
+        title: "Авторские блюда",
+        subtitle: "Готовим прямо на территории",
+      },
+      {
+        image: "/images/kitchen/02.avif",
+        title: "Сезонные продукты",
+        subtitle: "Собственная ферма",
+      },
+      {
+        image: "/images/kitchen/03.avif",
+        title: "Профессиональная подача",
+        subtitle: "Ресторанный уровень",
+      },
+    ],
+  };
+</script>
