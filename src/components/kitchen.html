@@ -1,7 +1,7 @@
-<section id="cooking" class="py-20 bg-green-50" x-data="{ isFormOpen: false }">
+<section id="cooking" class="py-20 bg-amber-50" x-data="{ isFormOpen: false }">
   <div class="container-main">
     <div class="max-w-3xl mx-auto mb-16 text-center">
-      <h2 class="mb-6 text-4xl font-bold text-green-800">
+      <h2 class="mb-6 text-4xl font-bold text-amber-800">
         Ресторанное качество на природе
       </h2>
       <p class="text-lg text-gray-600">
@@ -10,7 +10,6 @@
       </p>
     </div>
 
-    <!-- Слайдер -->
     <div class="mb-20 kitchen-slider swiper">
       <div class="swiper-wrapper">
         <each loop="slide in slides">
@@ -36,8 +35,8 @@
       </div>
 
       <div class="swiper-pagination !relative !mt-8"></div>
-      <div class="swiper-button-next !text-green-600"></div>
-      <div class="swiper-button-prev !text-green-600"></div>
+      <div class="swiper-button-next !text-amber-600"></div>
+      <div class="swiper-button-prev !text-amber-600"></div>
     </div>
 
     <div class="max-w-3xl mx-auto text-center">
@@ -62,7 +61,7 @@
       class="w-full max-w-md p-8 bg-white rounded-2xl"
       @click.outside="isFormOpen = false"
     >
-      <h3 class="mb-4 text-2xl font-bold text-green-800">
+      <h3 class="mb-4 text-2xl font-bold text-amber-800">
         Идеальное меню для вашего праздника
       </h3>
 
@@ -70,12 +69,12 @@
         <input
           type="text"
           placeholder="Ваше имя"
-          class="w-full p-3 border-b focus:border-green-600"
+          class="w-full p-3 border-b focus:border-amber-600"
         />
         <input
           type="tel"
           placeholder="Телефон"
-          class="w-full p-3 border-b focus:border-green-600"
+          class="w-full p-3 border-b focus:border-amber-600"
         />
         <button class="w-full button-base">Отправить</button>
       </form>
@@ -87,17 +86,13 @@
   module.exports = {
     slides: [
       {
-        image: "/images/kitchen/01.avif",
+        image: "/images/kitchen/01.jpg",
         title: "Авторские блюда",
-        subtitle: "Готовим прямо на территории",
+        subtitle:
+          "Под руководством именнитого Шеф-повара. Готовим прямо на территории",
       },
       {
-        image: "/images/kitchen/02.avif",
-        title: "Сезонные продукты",
-        subtitle: "Собственная ферма",
-      },
-      {
-        image: "/images/kitchen/03.avif",
+        image: "/images/kitchen/02.jpeg",
         title: "Профессиональная подача",
         subtitle: "Ресторанный уровень",
       },

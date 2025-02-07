@@ -1,11 +1,15 @@
 <header
-  class="border-b border-green-800"
+  class="border-b border-amber-800"
   x-data="{ isOpen: false, isModalOpen: false }"
 >
   <div class="container-main">
     <div class="flex items-center justify-between py-4">
-      logo
-      <!-- <img src="/logo.svg" alt="Медвежий угол" class="h-10 xl:h-12" /> -->
+      <img
+        src="/images/logo.png"
+        alt="Медвежий угол"
+        class="h-12 xl:h-16"
+        loading="lazy"
+      />
 
       <nav class="hidden xl:block">
         <ul class="flex items-center gap-8">
@@ -13,7 +17,7 @@
             <li>
               <a
                 href="{{ section.href }}"
-                class="text-lg transition-colors hover:text-green-800"
+                class="text-lg transition-colors hover:text-amber-800"
               >
                 {{ section.title }}
               </a>
@@ -25,7 +29,7 @@
       <div class="flex items-center gap-4 xl:hidden">
         <button
           @click="isOpen = !isOpen"
-          class="p-2 text-green-800"
+          class="p-2 text-amber-800"
           aria-label="Меню"
         >
           <svg
@@ -75,7 +79,7 @@
             <li>
               <a
                 href="{{ section.href }}"
-                class="block py-3 text-lg hover:text-green-800"
+                class="block py-3 text-lg hover:text-amber-800"
                 @click="isOpen = false"
               >
                 {{ section.title }}
@@ -103,20 +107,20 @@
       class="w-full max-w-md p-8 bg-white rounded-2xl"
       @click.outside="isModalOpen = false"
     >
-      <h3 class="mb-4 text-2xl font-bold text-green-800">Забронировать дату</h3>
+      <h3 class="mb-4 text-2xl font-bold text-amber-800">Забронировать дату</h3>
 
       <form class="space-y-5">
         <input
           type="text"
           placeholder="Ваше имя"
-          class="w-full p-3 border-b focus:border-green-600"
+          class="w-full p-3 border-b focus:border-amber-600"
         />
         <input
           type="tel"
           placeholder="Телефон"
-          class="w-full p-3 border-b focus:border-green-600"
+          class="w-full p-3 border-b focus:border-amber-600"
         />
-        <input type="date" class="w-full p-3 border-b focus:border-green-600" />
+        <input type="date" class="w-full p-3 border-b focus:border-amber-600" />
         <button class="w-full button-base">Отправить</button>
       </form>
     </div>

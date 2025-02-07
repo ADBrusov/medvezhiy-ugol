@@ -1,56 +1,47 @@
 <section id="team" class="py-20 bg-white">
   <div class="container-main">
     <div class="max-w-3xl mb-16">
-      <h2 class="mb-6 text-4xl font-bold text-green-800">Наша команда</h2>
-
-      <div class="space-y-4 text-lg text-gray-600">
-        <p class="max-w-2xl">
-          Мы организуем мероприятия более 10 лет и провели их более 500. Мы
-          создали площадки и вложили в них весь свой опыт, чтобы:
-        </p>
-
-        <ul class="pl-4 space-y-2 list-disc list-inside">
-          <each loop="item in listItems">
-            <li class="pl-2">{{ item }}</li>
-          </each>
-        </ul>
-
-        <p class="mt-4 font-semibold text-green-800">
-          Для любого количества гостей: от 30 до 250 человек
-        </p>
-      </div>
+      <h2 class="text-4xl font-bold text-amber-800">
+        Наши банкетные менеджеры:
+      </h2>
     </div>
 
-    <div class="grid gap-8 mb-20 md:grid-cols-2 xl:grid-cols-4">
+    <div class="grid gap-8 mb-20 md:grid-cols-2 xl:grid-cols-2">
       <each loop="member in teamMembers">
         <div
-          class="relative overflow-hidden transition-shadow shadow-lg group rounded-2xl hover:shadow-xl"
+          class="flex flex-col overflow-hidden transition-shadow rounded-2xl hover:shadow-lg"
         >
-          <img
-            src="{{ member.image }}"
-            alt="{{ member.position }}"
-            class="object-cover object-top w-full transition-transform duration-300 h-96 group-hover:scale-105"
-            loading="lazy"
-          />
+          <!-- Фото -->
+          <div class="relative h-[450px]">
+            <img
+              src="{{ member.image }}"
+              alt="{{ member.position }}"
+              class="object-cover object-top w-full h-full transition-transform duration-300 hover:scale-105"
+              loading="lazy"
+            />
+            <div
+              class="absolute inset-0 flex items-end p-4 bg-gradient-to-t from-black/60"
+            >
+              <div class="text-white">
+                <h3 class="text-xl font-bold">{{ member.name }}</h3>
+                <p class="text-sm opacity-90">{{ member.position }}</p>
+              </div>
+            </div>
+          </div>
 
-          <div
-            class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/60"
-          >
-            <div class="text-white">
-              <h3 class="text-xl font-bold">{{ member.name }}</h3>
-
-              <p class="text-sm opacity-90">{{ member.position }}</p>
-
-              <p class="mt-2 text-sm font-light opacity-75">
-                {{ member.experience }}
-              </p>
+          <!-- Описание -->
+          <div class="flex-1 p-6 bg-amber-50">
+            <div class="space-y-3 text-sm text-amber-900">
+              <div class="w-12 h-0.5 bg-amber-600"></div>
+              <div class="leading-relaxed">{{{ member.experience }}}</div>
             </div>
           </div>
         </div>
       </each>
     </div>
 
-    <div class="p-8 text-white bg-green-800 rounded-2xl">
+    <!-- Статистика (без изменений) -->
+    <div class="p-8 text-white bg-amber-800 rounded-2xl">
       <div
         class="flex flex-col items-center gap-6 md:flex-row md:justify-center"
       >
@@ -58,10 +49,8 @@
           <template x-if="!$first">
             <div class="w-12 h-px bg-white/20 md:w-px md:h-12"></div>
           </template>
-
           <div class="text-center">
             <div class="mb-1 text-4xl font-bold">{{ stat.value }}</div>
-
             <p class="text-sm tracking-wide opacity-90">{{ stat.label }}</p>
           </div>
         </each>
@@ -80,28 +69,18 @@
 
     teamMembers: [
       {
-        name: "Анна Иванова",
-        position: "Шеф-повар",
-        experience: "12 лет в ресторанном бизнесе",
-        image: "/images/team/chef.jpg",
+        name: "Анастасия",
+        position: "Банкетный менеджер свадебного Шатра 'Венеция'",
+        experience:
+          "- 5 лет опыта в Wedding event <br /> - За спиной более 20 крупных мероприятий в Москве <br /> - Работала с крупными артистами,такими как Ленинград, группа Dabro, Жуки, Gayazovs Brothers.",
+        image: "/images/team/01.jpg",
       },
       {
-        name: "Максим Петров",
-        position: "Старший координатор",
-        experience: "Организовал 200+ мероприятий",
-        image: "/images/team/coordinator.jpg",
-      },
-      {
-        name: "Ольга Смирнова",
-        position: "Главный декоратор",
-        experience: "7 лет создания праздничной атмосферы",
-        image: "/images/team/decorator.jpg",
-      },
-      {
-        name: "Артем Волков",
-        position: "Технический директор",
-        experience: "Обеспечиваем идеальную работу оборудования",
-        image: "/images/team/technician.jpg",
+        name: "Ксения",
+        position: "Банкетный менеджер свадебного шатра 'Императорский сад'",
+        experience:
+          "- 6 лет опыта в Wedding event <br /> - Коммуникабельный, ответственный и креативный человек <br /> - Найдёт выход из любой ситуации и предложит новые решения",
+        image: "/images/team/02.png",
       },
     ],
 

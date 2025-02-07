@@ -1,36 +1,40 @@
-<section id="advantages" class="py-12 bg-gray-50 md:py-20">
+<section id="advantages" class="py-12 bg-slate-50 md:py-16">
   <div class="container-main">
     <h2
-      class="mb-8 text-3xl font-bold text-center text-green-800 md:mb-16 md:text-4xl"
+      class="mb-6 text-2xl font-bold text-center md:mb-12 md:text-3xl text-amber-800"
     >
       Почему выбирают нас
     </h2>
 
-    <ul class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4 sm:gap-8">
+    <ul
+      class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:gap-5"
+    >
       <each loop="advantage in advantages">
         <li
-          class="relative p-6 overflow-hidden transition-all duration-300 bg-white shadow-sm rounded-xl hover:shadow-md md:p-8 hover:-translate-y-2 group"
+          class="relative p-4 overflow-hidden transition-all duration-300 bg-white rounded-md hover:shadow-xs md:p-5 hover:-translate-y-1 group"
         >
-          <!-- Градиентный фон при наведении -->
           <div
-            class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-br from-green-50/30 to-white/50 group-hover:opacity-100"
+            class="absolute inset-0 transition-opacity duration-200 opacity-0 bg-gradient-to-br from-amber-50/15 to-white/20 group-hover:opacity-100"
           ></div>
 
           <div class="relative flex flex-col h-full">
             <icon
               src="{{advantage.icon}}"
-              class="w-10 h-10 mb-4 text-green-700 transition-transform duration-300 md:w-16 md:h-16 md:mb-6 group-hover:scale-110 group-hover:text-green-800"
-            ></icon>
+              class="mb-2 transition-transform duration-300 w-7 h-7 md:w-10 md:h-10 text-amber-600 group-hover:scale-95 group-hover:text-amber-700"
+            >
+            </icon>
 
-            <h3 class="mb-3 text-lg font-semibold md:text-xl md:mb-4">
+            <h3
+              class="mb-1.5 text-sm font-semibold md:text-base md:mb-2 text-slate-700"
+            >
               {{ advantage.title }}
               <span
-                class="block w-8 h-1 mt-2 transition-all duration-300 bg-green-600 rounded-full md:w-12 md:mt-3 group-hover:w-16"
+                class="block w-5 h-0.5 mt-1 transition-all duration-300 bg-amber-400 rounded-full md:w-6 md:mt-1.5 group-hover:w-8"
               ></span>
             </h3>
 
             <p
-              class="text-sm leading-relaxed text-gray-600 md:text-base group-hover:text-gray-800"
+              class="text-xs leading-snug text-slate-600 md:text-[0.8rem] group-hover:text-slate-700"
             >
               {{ advantage.description }}
             </p>
@@ -57,22 +61,34 @@
         icon: "public/svg/checklist.svg", // Иконка чек-листа
       },
       {
+        title: "Территория Базы Отдыха",
+        description:
+          "Большой выбор домов для отдыха, а также сауна с бассеином и беседкой для празднования второго дня свадьбы!",
+        icon: "public/svg/trees.svg", // Иконка деревьев/природы
+      },
+      {
+        title: "Живописные зоны регистрации",
+        description:
+          "2 локации  для идеальных фотографий и трогательных моментов.",
+        icon: "public/svg/heart.svg", // Иконка свадебной арки
+      },
+      {
         title: "Уединенная территория",
         description:
           "Закрытая площадка в лесу для приватности вашего праздника. Никаких посторонних!",
         icon: "public/svg/trees.svg", // Иконка деревьев/природы
       },
       {
-        title: "Живописные зоны регистрации",
-        description:
-          "2 локации у озера и в саду для идеальных фотографий и трогательных моментов.",
-        icon: "public/svg/heart.svg", // Иконка свадебной арки
-      },
-      {
-        title: "Профессиональный декор",
+        title: "Декор от площадки",
         description:
           "Команда декораторов создаст атмосферу вашей мечты: от классики до современных трендов.",
         icon: "public/svg/paint-brush.svg", // Иконка кисти/декора
+      },
+      {
+        title: "Музыка 24/7",
+        description:
+          "Никаких ограничений по времени. Любой жанр, любая громкость — праздник не умолкает!",
+        icon: "public/svg/music-note.svg", // Иконка нот/динамика
       },
       {
         title: "Бесплатная парковка",
@@ -81,15 +97,9 @@
         icon: "public/svg/parking.svg", // Иконка парковки
       },
       {
-        title: "Музыка 24/7",
-        description:
-          "Звуковое оборудование премиум-класса. Любой жанр, любая громкость — праздник не умолкает!",
-        icon: "public/svg/music-note.svg", // Иконка нот/динамика
-      },
-      {
         title: "Подарки при бронировании",
         description:
-          "Свадебный фотосет, аренда арки или букет невесты в подарок при раннем бронировании.",
+          "Двухместных домик для молодоженов на сутки. Пирамида из бокалов шампанского. Шоу-подача от Шеф-повара.",
         icon: "public/svg/gift.svg", // Иконка подарка
       },
     ],

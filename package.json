@@ -19,6 +19,7 @@
     "vituum": "^1.0.0"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
     "alpinejs": "^3.13.2",
     "inputmask": "^5.0.9",
     "just-validate": "^4.3.0",

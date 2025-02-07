@@ -71,7 +71,7 @@ body {
 }
 
 .button-base {
-  @apply px-6 py-4 text-xl font-semibold text-white transition-opacity duration-300 bg-green-800 rounded-lg hover:opacity-75
+  @apply px-6 py-4 text-xl font-semibold text-white transition-opacity duration-300 bg-amber-800 rounded-lg hover:opacity-75
 }
 
 .swiper-button-next,
@@ -81,11 +81,11 @@ body {
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  @apply text-2xl text-green-600;
+  @apply text-2xl text-amber-600;
 }
 
 .swiper-bullet-custom {
-  @apply w-8 h-1 transition-all !bg-green-800 rounded-none;
+  @apply w-8 h-1 transition-all !bg-amber-800 rounded-none;
 }
 
 html {

@@ -5,6 +5,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 window.Alpine = Alpine;
 Alpine.start();
@@ -42,7 +44,7 @@ const initSliders = () => {
     },
     breakpoints: {
       640: { slidesPerView: 2 },
-      1280: { slidesPerView: 3, spaceBetween: 30 },
+      1280: { slidesPerView: 2, spaceBetween: 30 },
     },
   });
 
@@ -64,7 +66,34 @@ const initSliders = () => {
       1280: { slidesPerView: 3 },
     },
   });
+
+  // Слайдер галереи
+  new Swiper(".gallery-slider", {
+    modules: [Pagination],
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: ".gallery-slider .swiper-pagination",
+      clickable: true,
+      renderBullet: (index, className) => {
+        return `<span class="${className} swiper-bullet-custom"></span>`;
+      },
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
 };
 
 // Запуск после загрузки DOM
-document.addEventListener("DOMContentLoaded", initSliders);
+document.addEventListener("DOMContentLoaded", () => {
+  initSliders();
+
+  Fancybox.bind();
+});
