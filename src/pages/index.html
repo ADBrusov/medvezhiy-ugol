@@ -23,6 +23,39 @@
       <c-price></c-price>
 
       <c-contacts></c-contacts>
+
+      <div
+        x-show="isModalOpen"
+        x-cloak
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+      >
+        <div
+          class="w-full max-w-md p-8 bg-white rounded-2xl"
+          @click.outside="isModalOpen = false"
+        >
+          <h3 class="mb-4 text-2xl font-bold text-amber-800">
+            Забронировать дату
+          </h3>
+
+          <form class="space-y-5">
+            <input
+              type="text"
+              placeholder="Ваше имя"
+              class="w-full p-3 border-b focus:border-amber-600"
+            />
+            <input
+              type="tel"
+              placeholder="Телефон"
+              class="w-full p-3 border-b focus:border-amber-600"
+            />
+            <input
+              type="date"
+              class="w-full p-3 border-b focus:border-amber-600"
+            />
+            <button class="w-full button-base">Отправить</button>
+          </form>
+        </div>
+      </div>
     </div>
   </block>
 </extends>

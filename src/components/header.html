@@ -1,7 +1,4 @@
-<header
-  class="border-b border-amber-800"
-  x-data="{ isOpen: false, isModalOpen: false }"
->
+<header class="border-b border-amber-800">
   <div class="container-main">
     <div class="flex items-center justify-between py-4">
       <img
@@ -11,13 +8,13 @@
         loading="lazy"
       />
 
-      <nav class="hidden xl:block">
+      <nav class="hidden lg:block">
         <ul class="flex items-center gap-8">
           <each loop="section in sections">
             <li>
               <a
                 href="{{ section.href }}"
-                class="text-lg transition-colors hover:text-amber-800"
+                class="text-base transition-colors xl:text-lg hover:text-amber-800"
               >
                 {{ section.title }}
               </a>
@@ -26,15 +23,15 @@
         </ul>
       </nav>
 
-      <div class="flex items-center gap-4 xl:hidden">
+      <div class="flex items-center gap-4 lg:hidden">
         <button
-          @click="isOpen = !isOpen"
+          @click="isMenuOpen = !isMenuOpen"
           class="p-2 text-amber-800"
           aria-label="Меню"
         >
           <svg
             class="w-8 h-8"
-            :class="{ 'hidden': isOpen }"
+            :class="{ 'hidden': isMenuOpen }"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -49,7 +46,7 @@
 
           <svg
             class="w-8 h-8"
-            :class="{ 'hidden': !isOpen }"
+            :class="{ 'hidden': !isMenuOpen }"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -64,14 +61,15 @@
         </button>
       </div>
 
-      <button @click="isModalOpen = true" class="hidden button-base xl:block">
+      <button @click="isModalOpen = true" class="hidden button-base lg:block">
         Забронировать дату
       </button>
     </div>
 
     <div
-      x-show="isOpen"
-      class="absolute inset-x-0 z-50 w-full bg-white shadow-lg xl:hidden"
+      x-show="isMenuOpen"
+      x-cloak
+      class="absolute inset-x-0 z-50 w-full bg-white shadow-lg lg:hidden"
     >
       <div class="py-4 container-main">
         <ul class="flex flex-col gap-4">
@@ -80,7 +78,7 @@
               <a
                 href="{{ section.href }}"
                 class="block py-3 text-lg hover:text-amber-800"
-                @click="isOpen = false"
+                @click="isMenuOpen = false"
               >
                 {{ section.title }}
               </a>
@@ -94,35 +92,6 @@
           </li>
         </ul>
       </div>
-    </div>
-  </div>
-
-  <!-- Модальное окно для "Забронировать дату" -->
-  <div
-    x-show="isModalOpen"
-    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
-    x-cloak
-  >
-    <div
-      class="w-full max-w-md p-8 bg-white rounded-2xl"
-      @click.outside="isModalOpen = false"
-    >
-      <h3 class="mb-4 text-2xl font-bold text-amber-800">Забронировать дату</h3>
-
-      <form class="space-y-5">
-        <input
-          type="text"
-          placeholder="Ваше имя"
-          class="w-full p-3 border-b focus:border-amber-600"
-        />
-        <input
-          type="tel"
-          placeholder="Телефон"
-          class="w-full p-3 border-b focus:border-amber-600"
-        />
-        <input type="date" class="w-full p-3 border-b focus:border-amber-600" />
-        <button class="w-full button-base">Отправить</button>
-      </form>
     </div>
   </div>
 </header>

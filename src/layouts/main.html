@@ -30,9 +30,17 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Tenor+Sans&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
-  <body class="{{ bodyClass }}">
+  <body
+    class="{{ bodyClass }}"
+    x-data="{ isModalOpen: false, isMenuOpen: false }"
+  >
     <c-header></c-header>
 
     <block name="body"></block>

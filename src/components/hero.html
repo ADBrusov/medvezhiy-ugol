@@ -1,7 +1,7 @@
 <div class="relative min-h-[600px] xl:min-h-screen">
   <div class="h-full container-main">
     <div
-      class="absolute inset-0 before:absolute before:inset-0 before:bg-black/70 before:z-10"
+      class="absolute inset-0 before:absolute before:inset-0 before:bg-black/50 before:z-10"
     >
       <div class="!absolute inset-0 swiper hero-slider">
         <div class="swiper-wrapper">
@@ -34,20 +34,23 @@
         вместе с нами!
       </p>
 
-      <div class="mt-8 space-y-4 xl:mt-16">
+      <div class="flex flex-col items-start mt-8 space-y-4 xl:mt-16">
         <p class="text-lg font-semibold xl:text-xl text-gray-50">
           2 уникальных свадебных шатра:<br />
           "Венеция" и "Императорский сад"
         </p>
 
-        <div>
-          <a
-            href="#tents"
-            class="inline-block text-white shadow-xl bg-amber-700 button-base hover:bg-amber-800"
-          >
-            Подробнее
-          </a>
-        </div>
+        <a href="#tents" class="button-base">Подробнее</a>
+      </div>
+
+      <div class="flex flex-col items-start mt-16 space-y-2">
+        <button @click="isModalOpen = true" class="button-base">
+          Хочу отметить свадебное торжество
+        </button>
+
+        <p class="text-sm text-gray-200 opacity-90">
+          Свяжемся с вами в течение 5 минут
+        </p>
       </div>
     </div>
   </div>

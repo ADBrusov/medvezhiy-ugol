@@ -9,7 +9,6 @@ export default {
   ],
   theme: {
     fontFamily: {
-      // montserrat: ["Montserrat", ...defaultTheme.fontFamily.sans],
       open: ["Open Sans", ...defaultTheme.fontFamily.sans],
       tenor: ["Tenor Sans", ...defaultTheme.fontFamily.sans],
     },

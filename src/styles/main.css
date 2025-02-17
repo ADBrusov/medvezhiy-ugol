@@ -2,64 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  /* @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/Montserrat-ExtraLight.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 200;
-  }
-
-  @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/Montserrat-Light.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 300;
-  }
-
-  @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/Montserrat-Regular.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 400;
-  }
-
-  @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/Montserrat-Medium.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 500;
-  }
-
-  @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/Montserrat-SemiBold.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 600;\
-  }
-
-  @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/Montserrat-Bold.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 700;
-  }
-
-  @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/Montserrat-ExtraBold.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 800;
-  }
-
-  @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/Montserrat-Black.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 900;
-  } */
-}
-
 @layer components {
   .container-main {
     @apply max-w-[1920px] mx-auto w-full px-4 md:px-12 xl:px-24;
@@ -97,4 +39,8 @@ h2,
 h3,
 h4 {
   @apply font-tenor;
+}
+
+[x-cloak] {
+  display: none !important;
 }
