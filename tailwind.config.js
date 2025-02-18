@@ -9,8 +9,8 @@ export default {
   ],
   theme: {
     fontFamily: {
-      open: ["Open Sans", ...defaultTheme.fontFamily.sans],
-      tenor: ["Tenor Sans", ...defaultTheme.fontFamily.sans],
+      raleway: ["Raleway", ...defaultTheme.fontFamily.sans],
+      cormorant: ["Cormorant", ...defaultTheme.fontFamily.sans],
     },
     extend: {
       colors: {
