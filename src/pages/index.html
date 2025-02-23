@@ -5,27 +5,18 @@
   <block name="body">
     <div class="container-body">
       <c-hero></c-hero>
-
       <c-about></c-about>
-
       <c-tents></c-tents>
-
       <c-advantages></c-advantages>
-
       <c-kitchen></c-kitchen>
-
       <c-team></c-team>
-
       <c-houses></c-houses>
-
       <c-reviews></c-reviews>
-
       <c-gallery></c-gallery>
-
       <c-price></c-price>
-
       <c-contacts></c-contacts>
 
+      <!-- Модальное окно -->
       <div
         x-show="isModalOpen"
         x-cloak
@@ -39,22 +30,41 @@
             Забронировать дату
           </h3>
 
-          <form class="space-y-5">
-            <input
-              type="text"
-              placeholder="Ваше имя"
-              class="w-full p-3 border-b focus:border-amber-600"
-            />
-            <input
-              type="tel"
-              placeholder="Телефон"
-              class="w-full p-3 border-b focus:border-amber-600"
-            />
-            <input
-              type="date"
-              class="w-full p-3 border-b focus:border-amber-600"
-            />
-            <button class="w-full button-base">Отправить</button>
+          <!-- Форма -->
+          <form class="space-y-5 booking-form">
+            <div>
+              <input
+                id="booking-name"
+                type="text"
+                name="name"
+                placeholder="Ваше имя"
+                class="w-full p-3 border-b focus:border-amber-600"
+              />
+              <div class="error-label" id="booking-name-error"></div>
+            </div>
+
+            <div>
+              <input
+                id="booking-phone"
+                type="tel"
+                name="phone"
+                placeholder="Телефон"
+                class="w-full p-3 border-b focus:border-amber-600"
+              />
+              <div class="error-label" id="booking-phone-error"></div>
+            </div>
+
+            <div>
+              <input
+                id="booking-date"
+                type="date"
+                name="date"
+                class="w-full p-3 border-b focus:border-amber-600"
+              />
+              <div class="error-label" id="booking-date-error"></div>
+            </div>
+
+            <button type="submit" class="w-full button-base">Отправить</button>
           </form>
         </div>
       </div>

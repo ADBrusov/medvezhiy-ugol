@@ -44,3 +44,17 @@ h4 {
 [x-cloak] {
   display: none !important;
 }
+
+.input-error {
+  border-color: #ff0000 !important;
+  /* Красная рамка для ошибок */
+}
+
+.error-label {
+  color: #ff0000;
+  /* Красный цвет текста для сообщений об ошибках */
+  font-size: 0.875rem;
+  /* Размер текста */
+  margin-top: 0.25rem;
+  /* Отступ сверху */
+}
