@@ -66,18 +66,24 @@
         Идеальное меню для вашего праздника
       </h3>
 
-      <form class="space-y-5">
+      <form class="space-y-5 kitchen-form">
         <input
           type="text"
+          id="kitchen-name"
           placeholder="Ваше имя"
           class="w-full p-3 border-b focus:border-amber-600"
         />
+        <div class="error-label" id="kitchen-name-error"></div>
+
         <input
           type="tel"
+          id="kitchen-phone"
           placeholder="Телефон"
           class="w-full p-3 border-b focus:border-amber-600"
         />
-        <button class="w-full button-base">Отправить</button>
+        <div class="error-label" id="kitchen-phone-error"></div>
+
+        <button type="submit" class="w-full button-base">Отправить</button>
       </form>
     </div>
   </div>

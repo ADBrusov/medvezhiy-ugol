@@ -28,8 +28,9 @@
             <a
               href="tel:+79154449535"
               class="text-amber-700 hover:text-amber-800"
-              >8 (915) 444-95-35</a
             >
+              8 (915) 444-95-35
+            </a>
           </p>
         </div>
 
@@ -50,27 +51,34 @@
           <h3 class="mb-4 text-xl font-bold text-amber-800">
             Свяжитесь с нами
           </h3>
-          <form action="#" method="POST" class="space-y-5">
+          <form action="#" method="POST" class="space-y-5 contact-form">
             <input
               type="text"
-              name="name"
+              id="contact-name"
               placeholder="Ваше имя"
               class="w-full p-3 border-b focus:border-amber-600"
               required
             />
+            <div class="error-label" id="contact-name-error"></div>
+
             <input
               type="tel"
-              name="phone"
+              id="contact-phone"
               placeholder="Телефон"
               class="w-full p-3 border-b focus:border-amber-600"
               required
             />
+            <div class="error-label" id="contact-phone-error"></div>
+
             <textarea
               name="message"
+              id="contact-message"
               placeholder="Ваше сообщение"
               class="w-full p-3 border-b focus:border-amber-600"
               required
             ></textarea>
+            <div class="error-label" id="contact-message-error"></div>
+
             <button type="submit" class="mx-auto button-base">Отправить</button>
           </form>
         </div>
